@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laskuri: ja Koodauksen Työtunnit Laskuri</title>
+  <title>Laskuri: Koodauksen Työtunnit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -14,16 +14,13 @@
       padding: 20px;
       background-color: rgb(230, 214, 230);
     }
-
     p {
-    font-size: 20px;
-    margin-bottom: 20px; /* Tilaa kappaleen alapuolelle */
+      font-size: 20px;
+      margin-bottom: 20px; /* Tilaa kappaleen alapuolelle */
   }
-
-  h2 {
-  font-size: 18px; /* Asettaa h2-fonttikoon 18 pikseliin */
+    h2 {
+      font-size: 18px; /* Asettaa h2-fonttikoon 18 pikseliin */
 }
-  
     .container {
       display: flex;
       justify-content: center;
@@ -46,8 +43,8 @@
       background-color:  #060606;
     }
     @media (max-width: 600px) {
-  /* Varmistetaan, että hover-efekti ei ole käytössä mobiilissa */
-  button:hover {
+    /* Varmistetaan, että hover-efekti ei ole käytössä mobiilissa */
+    button:hover {
     background-color: #6d3063; /* Palautetaan väri mobiilissa */
   }
     .comment {
@@ -55,7 +52,23 @@
     color: #713671; /* Punainen väri kommentille */
     margin-top: 30px; /* Lisää tilaa kommentin ja painikkeen väliin */
 }
-  </style>
+    }
+
+    @media (min-width: 601px) {
+      .container {
+        gap: 50px; /* Isommilla näytöillä suurempi väli */
+      }
+
+      .counter {
+        font-size: 2rem; /* Pidä isompana fonttikoko */
+      }
+
+      .comment {
+        font-size: 1.5rem;
+        color: #713671;
+        margin-top: 40px; /* Lisää tilaa kommentille ja muulle sisällölle */
+      }
+</style>
 </head>
 <body>
   <h1>Kahvi ja Työtunnit Laskuri</h1>
