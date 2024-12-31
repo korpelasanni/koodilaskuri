@@ -45,7 +45,11 @@
     button:hover {
       background-color:  #060606;
     }
-
+    @media (max-width: 600px) {
+  /* Varmistetaan, että hover-efekti ei ole käytössä mobiilissa */
+  button:hover {
+    background-color: #6d3063; /* Palautetaan väri mobiilissa */
+  }
     .comment {
     font-size: 1.2rem;
     color: #713671; /* Punainen väri kommentille */
