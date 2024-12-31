@@ -4,16 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laskuri: ja Koodauksen Työtunnit Laskuri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
       padding: 20px;
+      background-color: rgb(230, 214, 230);
     }
+
+    p {
+    font-size: 20px;
+    margin-bottom: 20px; /* Tilaa kappaleen alapuolelle */
+    margin-top: 20px;
+  }
+  
     .container {
       display: flex;
       justify-content: center;
-      gap: 40px; /* Väli elementtien välillä */
+      gap: 50px; /* Väli elementtien välillä */
     }
     .counter {
       font-size: 2rem;
@@ -23,18 +34,18 @@
       padding: 10px 20px;
       font-size: 1rem;
       cursor: pointer;
-      background-color: #007bff;
+      background-color: #6d3063;
       color: white;
       border: none;
       border-radius: 5px;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color:  #060606;
     }
 
     .comment {
   font-size: 1.2rem;
-  color: #9a3c9a; /* Punainen väri kommentille */
+  color: #713671; /* Punainen väri kommentille */
   margin-top: 30px; /* Lisää tilaa kommentin ja painikkeen väliin */
 }
   </style>
@@ -64,7 +75,17 @@
     let workHours = 0;
 
     function addCoffee() {
-      if (coffeeCount < 10) { // Vain 10 kuppia voi lisätä
+      if (coffeeCount === 10) {
+        // Nollataan laskurit, jos kahvimäärä on 10
+        coffeeCount = 0;
+        workHours = 0;
+        document.getElementById("coffee-counter").innerText = `${coffeeCount} kuppia`;
+        document.getElementById("work-hours-counter").innerText = `${workHours} tuntia`;
+        document.getElementById("comment").innerText = "Laskuri on nollattu. Aloitetaan alusta!";
+        return;
+      }
+
+      if (coffeeCount < 10) {
         coffeeCount++;
         workHours = coffeeCount * 3; // 3 tuntia per kuppi
         document.getElementById("coffee-counter").innerText = `${coffeeCount} kuppia`;
@@ -78,14 +99,12 @@
         } else if (coffeeCount === 7) {
           commentText = "Seitsemän kuppia.. Tuntuu, että voisin koodata vaikka koko yön!";
         } else if (coffeeCount === 10) {
-          alert ("Voi ei, aika laittaa kone kiinni ja nukkua yön yli.. Tai ainakin ottaa vähintään yksi päivä vapaata koodeista!");
+          alert("Voi ei, aika laittaa kone kiinni ja nukkua yön yli.. Tai ainakin ottaa vähintään yksi päivä vapaata koodeista!");
         }
 
-        if (coffeeCount !== 10)
         document.getElementById("comment").innerText = commentText;
-        
-        }
       }
+    }
   </script>
 </body>
 </html>
